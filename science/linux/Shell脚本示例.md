@@ -4,7 +4,7 @@
 
 ## 输入与输出
 
-```
+```bash
 #!/bin/bash
 
 var_filename='date.txt'
@@ -25,9 +25,65 @@ var_text=`cat ${var_filename}`
 echo ${var_text}
 ```
 
-## printf
+## 字符串测试
+
+```bash
+#!/bin/sh
+
+STRING="1911"
+STRING_2="1912"
+
+# 字符串相同
+if [ "$STRING" = "$STRING_2" ]; then echo "same string"; fi
+
+# 字串长度为零
+if [ -z "$STRING" ]; then echo "zero string"; fi
+
+# 字符串长度非零
+if [ -n "$STRING" ]; then echo "not zero string"; fi
+if [ "$STRING" ]; then echo "not zero string"; fi
+```
+
+## 文件测试
+
+```bash
+#!/bin/sh
+
+# 文件测试
+TESTFILE="testfile"
+
+# 文件
+if [ -e "$TESTFILE" ]; then echo "exist"; fi
+
+# 可读文件
+if [ -r "$TESTFILE" ]; then echo "exist"; fi
+
+# 可写文件
+if [ -w "$TESTFILE" ]; then echo "exist"; fi
+
+# 可执行文件
+if [ -x "$TESTFILE" ]; then echo "exist"; fi
+
+# 普通文件
+if [ -f "$TESTFILE" ]; then echo "exist"; fi
+
+# 文件夹
+if [ -d "$TESTFILE" ]; then echo "exist"; fi
 
 ```
+
+## 流程控制
+
+```bash
+#!/bin/sh
+
+TEST=$1
+
+```
+
+## printf
+
+```bash
 #!/bin/sh
 
 # 格式化输出
@@ -47,7 +103,7 @@ printf "${var_format_content}" "杨过" "男" 90
 
 ## 内置变量
 
-```
+```bash
 #!/bin/bash
 
 # 参数的个数
@@ -66,7 +122,7 @@ echo "exit state: $?"
 
 ## 变量
 
-```
+```bash
 #!/bin/bash
 
 # 变量定义
@@ -95,7 +151,7 @@ echo ${var_name}
 
 ## 数组
 
-``````
+```bash
 #!/bin/bash
 
 var_array_str=("A" "B" "C")
@@ -119,4 +175,4 @@ do
     # let i+=1
     ((i++))
 done
-``````
+```
